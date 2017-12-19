@@ -79,8 +79,10 @@ def main(w):
         w.refresh()
         time.sleep(1)
 
-    w.getkey()
-
 if __name__ == '__main__':
-    wrapper(main)
+    try: 
+        wrapper(main)
+    except KeyboardInterrupt:
+        # ignore KeyboardInterrupt error because it is ugly
+        pass
     # main(curses.initscr())
